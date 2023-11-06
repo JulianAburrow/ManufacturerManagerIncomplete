@@ -1,0 +1,51 @@
+﻿@page "/colourjustifications/index"
+@inherits ColourJustificationBasePageClass
+
+<PageTitle>Colour Justifications</PageTitle>
+
+@if (ColourJustifications == null)
+{
+    <MudAlert Severity="Severity.Info" ContentAlignment="HorizontalAlignment.Center">Loading Colour Justifications</MudAlert>
+    return;
+}
+
+<h3>Colour Justifications</h3>
+
+<a href="/colourjustification/create" class="btn btn-primary">Create Colour Justification</a>
+
+<br />
+<br />
+
+<MudTable
+    Items="ColourJustifications"
+    Hover
+    FixedHeader="true"
+    Height="500px">
+    <HeaderContent>
+        <MudTh title="Sort by Justification">
+            <MudTableSortLabel SortBy="new Func<ColourJustificationModel, object>(x => x.Justification)">
+                Justification
+            </MudTableSortLabel>
+        </MudTh>
+        <MudTh title="Sort by Widget Count">
+            <MudTableSortLabel SortBy="new Func<ColourJustificationModel, object>(x => x.Widgets.Count)">
+                Widget Count
+            </MudTableSortLabel>
+        </MudTh>
+        <MudTh></MudTh>
+    </HeaderContent>
+    <RowTemplate>
+        <MudTd>@context.Justification</MudTd>
+         <MudTd>@context.Widgets.Count</MudTd>
+         <MudTd>
+             <a href="/colourjustification/view/@context.ColourJustificationId" class="btn btn-primary">View</a>
+             &nbsp;
+             <a href="/colourjustification/edit/@context.ColourJustificationId" class="btn btn-primary">Edit</a>
+             &nbsp;
+             <a href="/colourjustification/delete/@context.ColourJustificationId" class="btn btn-danger">Delete</a>
+         </MudTd>
+     </RowTemplate>
+     <PagerContent>
+         <MudTablePager PageSizeOptions="new int[] { 5, 10, 15, int.MaxValue }" />
+     </PagerContent>
+</MudTable>

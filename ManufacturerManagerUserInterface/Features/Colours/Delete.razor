@@ -1,0 +1,35 @@
+﻿@page "/colour/delete/{ColourId:int}"
+@inherits ColourBasePageClass
+
+@if (ColourModel == null)
+{
+    <MudAlert Severity="Severity.Info" ContentAlignment="HorizontalAlignment.Center">Loading Colour</MudAlert>
+    return;
+}
+
+<h3>Delete Colour</h3>
+
+@if (ColourModel.Widgets.Any())
+{
+    <MudAlert Severity="Severity.Error" ContentAlignment="HorizontalAlignment.Center">
+        Cannot delete colour @ColourModel.Name as @ColourModel.Widgets.Count @(ColourModel.Widgets.Count == 1 ? "Widget is" : "Widgets are") this colour
+    </MudAlert>
+    <br />
+    <a href="/colours/index" class="btn btn-primary">Cancel</a>
+    return;
+}
+
+<MudAlert Severity="Severity.Warning" ContentAlignment="HorizontalAlignment.Center">
+    Are you sure you want to delete the colour @ColourModel.Name?
+</MudAlert>
+
+<br />
+<br />
+
+@if (!ColourModel.Widgets.Any())
+{
+    <button class="btn btn-danger" @onclick="DeleteColour">Delete</button>
+    @:&nbsp;
+}
+<a href="/colours/index" class="btn btn-primary">Cancel</a>
+

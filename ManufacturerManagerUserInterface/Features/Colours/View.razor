@@ -1,0 +1,28 @@
+﻿@page "/colour/view/{ColourId:int}"
+@inherits ColourBasePageClass
+
+<PageTitle>View Colour</PageTitle>
+
+@if (ColourModel == null)
+{
+    <MudAlert Severity="Severity.Info" ContentAlignment="HorizontalAlignment.Center">Loading Colour</MudAlert>
+    return;
+}
+
+<h3>View Colour</h3>
+
+<MudGrid>
+    <MudItem sm="7">
+        <MudCard>
+            <MudCardContent>
+                <MudField Label="Id">@ColourModel.ColourId</MudField>
+                <MudField Label="Name">@ColourModel.Name</MudField>
+            </MudCardContent>
+            <MudCardActions>
+                <a href="/colour/edit/@ColourModel.ColourId" class="btn btn-primary">Edit</a>
+                &nbsp;
+                <a href="/colours/index" class="btn btn-primary">Back to list</a>
+            </MudCardActions>
+        </MudCard>
+    </MudItem>
+</MudGrid>

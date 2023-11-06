@@ -1,0 +1,34 @@
+ManufacturerManager Application
+
+Preamble
+
+ManufacturerManager is an application used to manage manufacturers and the widgets that they make.
+
+Business Rules
+1)	A widget cannot be added if there are no manufacturers in the database.
+2)	The create widget page should use a Mudblazor alert to warn the user if there are no manufacturers available.
+3)	If a manufacturer’s status is set to inactive the status of all widgets made by that manufacturer will also be set to inactive.
+4)	The reverse is not true: if a manufacturer’s status is set to active all widgets will remain inactive.
+5)	A widget can be created with an inactive manufacturer but when the manufacturer is selected the widget’s status will be set to inactive, a warning will appear and the status dropdown list will be disabled.
+6)	In the case of 4), when the manufacturer dropdown list is set back to either an active manufacturer or the default value the status dropdown list will revert to the default value and will become enabled.
+
+DataAccess Project
+1)	All entities should have a handler which implements an appropriate interface.
+2)	All entities should have a configuration class.
+3)	Manufacturers and widgets should both have a status enum.
+
+ManufacturerManagerUserInterface Project
+1)	All objects with the exception of ManufacturerStatus and WidgetStatus should be configurable in UI.
+2)	All objects with the exception of ManufacturerStatus and WidgetStatus should have a corresponding DisplayModel.
+3)	All configurable objects will inherit from an appropriately named abstract BasePageClass.
+4)	There will be a menu item to enable access to the appropriate objects.
+5)	All objects will have their handler class available via dependency injection.
+
+Test Project
+1)	All objects will have a corresponding test class in which every method in the handler will be tested.
+
+The problems
+This application was developed by a contractor who suddenly disappeared. It is now imperative that the application is completed as it forms part of the company’s business strategy.
+ 
+The challenge
+There is enough material in the application as it stands to complete it. New code should mirror the existing code and should follow the same architecture.

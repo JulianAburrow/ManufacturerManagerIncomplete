@@ -1,0 +1,51 @@
+﻿@page "/colours/index"
+@inherits ColourBasePageClass
+
+<PageTitle>Colours</PageTitle>
+
+@if (Colours == null)
+{
+    <MudAlert Severity="Severity.Info" ContentAlignment="HorizontalAlignment.Center">Loading Colours</MudAlert>
+    return;
+}
+
+<h3>Colours</h3>
+
+<a href="/colour/create" class="btn btn-primary">Create Colour</a>
+
+<br />
+<br />
+
+<MudTable
+    Items="Colours"
+    Hover
+    FixedHeader="true"
+    Height="500px">
+    <HeaderContent>
+        <MudTh title="Sort by Name">
+            <MudTableSortLabel SortBy="new Func<ColourModel, object>(x => x.Name)">
+                Name
+            </MudTableSortLabel>
+        </MudTh>
+        <MudTh title="Sort by Widget Count">
+            <MudTableSortLabel SortBy="new Func<ColourModel, object>(x => x.Widgets.Count)">
+                Widget Count
+            </MudTableSortLabel>
+        </MudTh>
+        <MudTh></MudTh>
+    </HeaderContent>
+    <RowTemplate>
+        <MudTd>@context.Name</MudTd>
+        <MudTd>@context.Widgets.Count</MudTd>
+        <MudTd>
+            <a href="/colour/view/@context.ColourId" class="btn btn-primary">View</a>
+            &nbsp;
+            <a href="/colour/edit/@context.ColourId" class="btn btn-primary">Edit</a>
+            &nbsp;
+            <a href="/colour/delete/@context.ColourId" class="btn btn-danger">Delete</a>
+        </MudTd>
+    </RowTemplate>
+    <PagerContent>
+        <MudTablePager PageSizeOptions="new int[] { 5, 10, 15, int.MaxValue }" />
+    </PagerContent>
+</MudTable>
