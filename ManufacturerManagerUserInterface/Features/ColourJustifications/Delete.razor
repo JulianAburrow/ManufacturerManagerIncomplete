@@ -9,7 +9,7 @@
 
 <h3>Delete Colour</h3>
 
-@if (ColourJustificationModel.Widgets.Any())
+@* @if (ColourJustificationModel.Widgets.Any())
 {
     <MudAlert Severity="Severity.Error" ContentAlignment="HorizontalAlignment.Center">
         Cannot delete colour @ColourJustificationModel.Justification as @ColourJustificationModel.Widgets.Count @(ColourJustificationModel.Widgets.Count == 1 ? "Widget" : "Widgets") have this colour justification
@@ -17,7 +17,7 @@
     <br />
     <a href="/colourjustifications/index" class="btn btn-primary">Cancel</a>
     return;
-}
+} *@
 
 <MudAlert Severity="Severity.Warning" ContentAlignment="HorizontalAlignment.Center">
     Are you sure you want to delete the colour justification @ColourJustificationModel.Justification?
@@ -26,11 +26,11 @@
 <br />
 <br />
 
-@if (!ColourJustificationModel.Widgets.Any())
+@* @if (!ColourJustificationModel.Widgets.Any())
 {
     <button class="btn btn-danger" @onclick="DeleteColourJustification">Delete</button>
     @:&nbsp;
-}
+} *@
 <a href="/colourjustifications/index" class="btn btn-primary">Cancel</a>
 
 

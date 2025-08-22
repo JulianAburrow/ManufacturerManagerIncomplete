@@ -16,7 +16,7 @@ public class ColourJustificationHandler : IColourJustificationHandler
             await SaveChangesAsync();
     }
 
-    public async Task DeleteColourJusticationAsync(int colourJustificationId, bool callSaveChanges)
+    public async Task DeleteColourJustificationAsync(int colourJustificationId, bool callSaveChanges)
     {
         var colourJustificationToDelete = _context.ColourJustifications.SingleOrDefault(c => c.ColourJustificationId == colourJustificationId);
         if (colourJustificationToDelete == null)
@@ -28,12 +28,11 @@ public class ColourJustificationHandler : IColourJustificationHandler
 
     public async Task<ColourJustificationModel> GetColourJustificationAsync(int colourJustificationId) =>
         await _context.ColourJustifications
-        .Include(c => c.Widgets)
+        //.Include(c => c.Widgets)
         .SingleOrDefaultAsync(c => c.ColourJustificationId == colourJustificationId);
 
     public async Task<List<ColourJustificationModel>> GetColourJustificationsAsync() =>
         await _context.ColourJustifications
-        .Include(c => c.Widgets)
         .ToListAsync();
 
     public async Task SaveChangesAsync()

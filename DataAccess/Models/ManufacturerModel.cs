@@ -10,5 +10,5 @@ public class ManufacturerModel
 
     public ManufacturerStatusModel Status { get; set; } = null!;
 
-    public ICollection<WidgetModel> Widgets { get; set; } = null!;
+    //public ICollection<WidgetModel> Widgets { get; set; } = null!;
 }

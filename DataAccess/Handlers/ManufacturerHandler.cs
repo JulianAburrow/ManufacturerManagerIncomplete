@@ -16,14 +16,13 @@ public class ManufacturerHandler : IManufacturerHandler
 
     public async Task<ManufacturerModel> GetManufacturerAsync(int manufacturerId) =>
         await _context.Manufacturers
-            .Include(m => m.Widgets)
-                .ThenInclude(w => w.Colour)
+            //.Include(m => m.Widgets)
+            //    .ThenInclude(w => w.Colour)
             .Include(m => m.Status)
             .SingleOrDefaultAsync(m => m.ManufacturerId == manufacturerId);
 
     public async Task<List<ManufacturerModel>> GetManufacturersAsync() =>
         await _context.Manufacturers
-            .Include(m => m.Widgets)
             .Include(m => m.Status)
             .ToListAsync();
 
@@ -35,7 +34,7 @@ public class ManufacturerHandler : IManufacturerHandler
     public async Task UpdateManufacturerAsync(ManufacturerModel manufacturer, bool callSaveChanges)
     {
         var manufacturerToUpdate = _context.Manufacturers
-            .Include (m => m.Widgets)
+            //.Include (m => m.Widgets)
             .SingleOrDefault(m => m.ManufacturerId == manufacturer.ManufacturerId);
         if (manufacturerToUpdate == null)
             return;
@@ -45,10 +44,7 @@ public class ManufacturerHandler : IManufacturerHandler
         if (manufacturerToUpdate.StatusId == (int) PublicEnums.ManufacturerStatusEnum.Inactive)
         {
             // All of this manufacturers Widgets should now be set to inactive
-            foreach (var widget in manufacturerToUpdate.Widgets)
-            {
-                widget.StatusId = (int) PublicEnums.WidgetStatusEnum.Inactive;
-            }
+            
         }
 
         if (callSaveChanges)
