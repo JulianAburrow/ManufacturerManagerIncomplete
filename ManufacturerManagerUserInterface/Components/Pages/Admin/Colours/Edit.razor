@@ -1,0 +1,23 @@
+﻿@page "/colour/edit/{ColourId:int}"
+@inherits ColourBasePageClass
+
+<PageTitle>Edit Colour</PageTitle>
+
+@if (ColourDisplayModel == null)
+{
+    <LoadingMessageComponent ValueToShow="@Colour" />
+    return;
+}
+
+<EditForm Model="@ColourDisplayModel" OnValidSubmit="UpdateColour">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <MudGrid>
+        <MudItem sm="7">
+            <MudCard>
+                <ColourCreateUpdateComponent ColourDisplayModel="@ColourDisplayModel" />
+            </MudCard>
+        </MudItem>
+    </MudGrid>
+</EditForm>

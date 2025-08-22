@@ -1,0 +1,21 @@
+﻿@page "/errors/index"
+@inherits ErrorBasePageClass
+
+<PageTitle>Errors</PageTitle>
+
+@if (Errors == null)
+{
+    <LoadingMessageComponent ValueToShow="@ErrorPlural" />
+    return;
+}
+
+<br />
+<br />
+
+@if (Errors.Count == 0)
+{
+    <NoResultsComponent ObjectType="@ErrorPlural" />
+    return;
+}
+
+<ErrorGridViewComponent Errors="Errors" />

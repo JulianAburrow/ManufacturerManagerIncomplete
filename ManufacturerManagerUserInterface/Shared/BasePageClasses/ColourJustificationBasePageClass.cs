@@ -1,12 +1,23 @@
 ﻿namespace ManufacturerManagerUserInterface.Shared.BasePageClasses;
 
-public abstract class ColourJustificationBasePageClass : BasePageClass
+public class ColourJustificationBasePageClass : BasePageClass
 {
-    [Inject] protected IColourJustificationHandler ColourJustificationHandler { get; set; } = default!;
+    [Inject] protected IColourJustificationCommandHandler ColourJustificationCommandHandler { get; set; } = default!;
 
-    [Parameter] public int ColourJustificationId { get; set; }
+    [Inject] protected IColourJustificationQueryHandler ColourJustificationQueryHandler { get; set; } = default!;
 
-    protected ColourJustificationModel ColourJustificationModel { get; set; } = default!;
+    [Parameter] public int ColourJustificationId {  get; set; }
 
-    protected ColourJustificationDisplayModel ColourJustificationDisplayModel { get; set; } = default!;
+    protected ColourJustificationModel ColourJustificationModel { get; set; } = new();
+
+    protected ColourJustificationDisplayModel ColourJustificationDisplayModel { get; set; } = new();
+
+    protected string ColourJustification = "Colour Justification";
+
+    protected string ColourJustificationPlural = "Colour Justifications";
+
+    protected BreadcrumbItem GetColourJustificationHomeBreadcrumbItem(bool isDisabled = false)
+    {
+        return new ("ColourJustifications", "/colourjustifications/index", isDisabled);
+    }
 }

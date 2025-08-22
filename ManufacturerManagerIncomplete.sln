@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccess", "DataAccess\DataAccess.csproj", "{96505874-D2EC-40C6-B1D3-54E4C9715FC8}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{5A78E1B9-022C-4B66-97DC-EDB54089898A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DbScripts", "DbScripts", "{FCDA6F46-C594-4587-A33D-5F5524281C62}"
@@ -12,16 +10,20 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DbScripts", "DbScripts", "{
 		DbScripts\ManufacturerManager_Db_Script.sql = DbScripts\ManufacturerManager_Db_Script.sql
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ManufacturerManagerUserInterface", "ManufacturerManagerUserInterface\ManufacturerManagerUserInterface.csproj", "{3E600182-2BD8-467C-8749-A23E51872FFF}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{7917C124-1185-478E-9014-13397F44918A}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tests", "Tests\Tests.csproj", "{C5BFD0DB-349E-4CF1-8920-A112ED33B765}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentation", "{7826F90A-79E1-4C38-BED7-BD5A9A09A864}"
 	ProjectSection(SolutionItems) = preProject
 		Documentation\ManufacturerManagerIncomplete.txt = Documentation\ManufacturerManagerIncomplete.txt
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestsPlaywright", "TestsPlaywright\TestsPlaywright.csproj", "{6750483F-2883-2F9A-5074-A4BB37DF6779}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestsUnit", "TestsUnit\TestsUnit.csproj", "{98E8096D-0F3A-9C5B-94FB-277806BBEE11}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManufacturerManagerDataAccess", "ManufacturerManagerDataAccess\ManufacturerManagerDataAccess.csproj", "{BD0FFC86-19C4-06AD-73FC-E0900F944077}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManufacturerManagerUserInterface", "ManufacturerManagerUserInterface\ManufacturerManagerUserInterface.csproj", "{B6E6128D-A77D-35F3-5676-33EF4FD30F73}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,26 +31,31 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{96505874-D2EC-40C6-B1D3-54E4C9715FC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{96505874-D2EC-40C6-B1D3-54E4C9715FC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{96505874-D2EC-40C6-B1D3-54E4C9715FC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{96505874-D2EC-40C6-B1D3-54E4C9715FC8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3E600182-2BD8-467C-8749-A23E51872FFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3E600182-2BD8-467C-8749-A23E51872FFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3E600182-2BD8-467C-8749-A23E51872FFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3E600182-2BD8-467C-8749-A23E51872FFF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C5BFD0DB-349E-4CF1-8920-A112ED33B765}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C5BFD0DB-349E-4CF1-8920-A112ED33B765}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C5BFD0DB-349E-4CF1-8920-A112ED33B765}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C5BFD0DB-349E-4CF1-8920-A112ED33B765}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6750483F-2883-2F9A-5074-A4BB37DF6779}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6750483F-2883-2F9A-5074-A4BB37DF6779}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6750483F-2883-2F9A-5074-A4BB37DF6779}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6750483F-2883-2F9A-5074-A4BB37DF6779}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98E8096D-0F3A-9C5B-94FB-277806BBEE11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98E8096D-0F3A-9C5B-94FB-277806BBEE11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98E8096D-0F3A-9C5B-94FB-277806BBEE11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98E8096D-0F3A-9C5B-94FB-277806BBEE11}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD0FFC86-19C4-06AD-73FC-E0900F944077}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD0FFC86-19C4-06AD-73FC-E0900F944077}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD0FFC86-19C4-06AD-73FC-E0900F944077}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD0FFC86-19C4-06AD-73FC-E0900F944077}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6E6128D-A77D-35F3-5676-33EF4FD30F73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6E6128D-A77D-35F3-5676-33EF4FD30F73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6E6128D-A77D-35F3-5676-33EF4FD30F73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6E6128D-A77D-35F3-5676-33EF4FD30F73}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{96505874-D2EC-40C6-B1D3-54E4C9715FC8} = {5A78E1B9-022C-4B66-97DC-EDB54089898A}
-		{3E600182-2BD8-467C-8749-A23E51872FFF} = {5A78E1B9-022C-4B66-97DC-EDB54089898A}
-		{C5BFD0DB-349E-4CF1-8920-A112ED33B765} = {7917C124-1185-478E-9014-13397F44918A}
+		{6750483F-2883-2F9A-5074-A4BB37DF6779} = {7917C124-1185-478E-9014-13397F44918A}
+		{98E8096D-0F3A-9C5B-94FB-277806BBEE11} = {7917C124-1185-478E-9014-13397F44918A}
+		{BD0FFC86-19C4-06AD-73FC-E0900F944077} = {5A78E1B9-022C-4B66-97DC-EDB54089898A}
+		{B6E6128D-A77D-35F3-5676-33EF4FD30F73} = {5A78E1B9-022C-4B66-97DC-EDB54089898A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EC7695F7-81FD-4099-8621-3B35184EFDCD}

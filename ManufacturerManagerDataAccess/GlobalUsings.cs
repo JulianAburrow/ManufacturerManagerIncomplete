@@ -1,0 +1,8 @@
+﻿global using Microsoft.EntityFrameworkCore;
+global using Microsoft.EntityFrameworkCore.Metadata.Builders;
+global using ManufacturerManagerDataAccess.Configuration;
+global using ManufacturerManagerDataAccess.Data;
+global using ManufacturerManagerDataAccess.Enums;
+global using ManufacturerManagerDataAccess.Interfaces.CommandHandlers;
+global using ManufacturerManagerDataAccess.Interfaces.QueryHandlers;
+global using ManufacturerManagerDataAccess.Models;

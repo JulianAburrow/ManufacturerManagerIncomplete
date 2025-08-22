@@ -1,15 +1,18 @@
-﻿global using DataAccess.Data;
-global using DataAccess.Handlers;
-global using DataAccess.Interfaces;
-global using DataAccess.Models;
+﻿global using Microsoft.AspNetCore.Components;
+global using Microsoft.EntityFrameworkCore;
+global using ManufacturerManagerDataAccess.Data;
+global using ManufacturerManagerDataAccess.Handlers.CommandHandlers;
+global using ManufacturerManagerDataAccess.Handlers.QueryHandlers;
+global using ManufacturerManagerDataAccess.Interfaces.CommandHandlers;
+global using ManufacturerManagerDataAccess.Interfaces.QueryHandlers;
+global using ManufacturerManagerDataAccess.Models;
+global using ManufacturerManagerUserInterface.Components;
+global using ManufacturerManagerUserInterface.Components.Layout;
 global using ManufacturerManagerUserInterface.Extensions;
 global using ManufacturerManagerUserInterface.Models;
 global using ManufacturerManagerUserInterface.Shared.BasePageClasses;
 global using ManufacturerManagerUserInterface.Shared.CommonValues;
-global using Microsoft.AspNetCore.Components;
-global using Microsoft.EntityFrameworkCore;
 global using MudBlazor;
 global using MudBlazor.Services;
 global using System.ComponentModel.DataAnnotations;
-
-global using static DataAccess.Enums.PublicEnums;
+global using static ManufacturerManagerDataAccess.Enums.PublicEnums;

@@ -10,9 +10,14 @@ public static class ServiceExtensions
 
     public static void AddDependencies(this IServiceCollection services)
     {
-        services.AddTransient<IColourHandler, ColourHandler>();
-        services.AddTransient<IColourJustificationHandler, ColourJustificationHandler>();
-        services.AddTransient<IManufacturerHandler, ManufacturerHandler>();
-        services.AddTransient<IManufacturerStatusHandler, ManufacturerStatusHandler>();
+        services.AddTransient<IColourCommandHandler, ColourCommandHandler>();
+        services.AddTransient<IColourQueryHandler, ColourQueryHandler>();
+        services.AddTransient<IColourJustificationCommandHandler, ColourJustificationCommandHandler>();
+        services.AddTransient<IColourJustificationQueryHandler, ColourJustificationQueryHandler>();
+        services.AddTransient<IErrorCommandHandler, ErrorCommandHandler>();
+        services.AddTransient<IErrorQueryHandler, ErrorQueryHandler>();
+        services.AddTransient<IManufacturerCommandHandler, ManufacturerCommandHandler>();
+        services.AddTransient<IManufacturerQueryHandler, ManufacturerQueryHandler>();
+        services.AddTransient<IManufacturerStatusQueryHandler, ManufacturerStatusQueryHandler>();
     }
 }

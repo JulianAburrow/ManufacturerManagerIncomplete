@@ -1,0 +1,23 @@
+﻿@page "/colourjustifications/index"
+@inherits ColourJustificationBasePageClass
+
+<PageTitle>Colour Justifications</PageTitle>
+
+@if (ColourJustifications == null)
+{
+    <LoadingMessageComponent ValueToShow="@ColourJustificationPlural" />
+    return;
+}
+
+<a href="/colourjustification/create" class="btn btn-primary">Create Colour Justification</a>
+
+<br />
+<br />
+
+@if (ColourJustifications.Count == 0)
+{
+    <NoResultsComponent ObjectType="@ColourJustificationPlural" />
+    return;
+}
+
+<ColourJustificationGridViewComponent ColourJustifications="ColourJustifications" />

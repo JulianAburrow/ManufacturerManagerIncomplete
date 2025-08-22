@@ -1,0 +1,23 @@
+﻿@page "/colours/index"
+@inherits ColourBasePageClass
+
+<PageTitle>Colours</PageTitle>
+
+@if (Colours == null)
+{
+    <LoadingMessageComponent ValueToShow="@ColourPlural" />
+    return;
+}
+
+<a href="/colour/create" class="btn btn-primary">Create Colour</a>
+
+<br />
+<br />
+
+@if (Colours.Count == 0)
+{
+    <NoResultsComponent ObjectType="@ColourPlural" />
+    return;
+}
+
+<ColourGridViewComponent Colours="Colours" />

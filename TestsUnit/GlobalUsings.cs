@@ -1,0 +1,11 @@
+﻿global using FluentAssertions;
+global using Microsoft.EntityFrameworkCore;
+global using ManufacturerManagerDataAccess.Data;
+global using ManufacturerManagerDataAccess.Enums;
+global using ManufacturerManagerDataAccess.Handlers.CommandHandlers;
+global using ManufacturerManagerDataAccess.Handlers.QueryHandlers;
+global using ManufacturerManagerDataAccess.Interfaces.CommandHandlers;
+global using ManufacturerManagerDataAccess.Interfaces.QueryHandlers;
+global using ManufacturerManagerDataAccess.Models;
+global using TestsUnit.Helpers;
+global using Xunit;

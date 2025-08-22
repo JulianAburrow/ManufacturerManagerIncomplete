@@ -1,0 +1,17 @@
+﻿@page "/colour/create"
+@inherits ColourBasePageClass
+
+<PageTitle>Create Colour</PageTitle>
+
+<EditForm Model="@ColourDisplayModel" OnValidSubmit="CreateColour">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <MudGrid>
+        <MudItem sm="7">
+            <MudCard>
+                <ColourCreateUpdateComponent ColourDisplayModel="@ColourDisplayModel" />
+            </MudCard>
+        </MudItem>
+    </MudGrid>
+</EditForm>
