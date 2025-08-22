@@ -12,7 +12,7 @@ Business Rules
 5)	A widget can be created with an inactive manufacturer but when the manufacturer is selected the widget’s status will be set to inactive, a warning will appear and the status dropdown list will be disabled.
 6)	In the case of 4), when the manufacturer dropdown list is set back to either an active manufacturer or the default value the status dropdown list will revert to the default value and will become enabled.
 
-DataAccess Project
+ManufacturerManagerDataAccess Project
 1)	All entities should have a handler which implements an appropriate interface.
 2)	All entities should have a configuration class.
 3)	Manufacturers and widgets should both have a status enum.
