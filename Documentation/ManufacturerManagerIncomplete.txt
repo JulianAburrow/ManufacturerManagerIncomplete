@@ -24,8 +24,9 @@ ManufacturerManagerUserInterface Project
 4)	There will be a menu item to enable access to the appropriate objects.
 5)	All objects will have their handler class available via dependency injection.
 
-Test Project
-1)	All objects will have a corresponding test class in which every method in the handler will be tested.
+Test Projects
+1)	All objects and pages will have corresponding test classes - implemented in tha same CQRS pattern as the interfaces and handlers in the data access project - in which every method
+	in the handlers will be tested and all appropriate actions in the pages will be tested by Playwright.
 
 The problems
 This application was developed by a contractor who suddenly disappeared. It is now imperative that the application is completed as it forms part of the company’s business strategy.

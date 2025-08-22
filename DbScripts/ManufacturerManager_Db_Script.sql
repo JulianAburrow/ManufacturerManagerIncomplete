@@ -13,17 +13,17 @@
 USE Master
 GO
 
-IF EXISTS (SELECT * FROM sys.databases WHERE NAME = 'ManufacturerManagerWithMudBlazor')
-	ALTER DATABASE [ManufacturerManagerWithMudBlazor] SET  SINGLE_USER WITH ROLLBACK IMMEDIATE
+IF EXISTS (SELECT * FROM sys.databases WHERE NAME = 'ManufacturerManager')
+	ALTER DATABASE [ManufacturerManager] SET  SINGLE_USER WITH ROLLBACK IMMEDIATE
 GO
-IF EXISTS (SELECT * FROM sys.databases WHERE NAME = 'ManufacturerManagerWithMudBlazor')
-	DROP DATABASE ManufacturerManagerWithMudBlazor
-GO
-
-CREATE DATABASE ManufacturerManagerWithMudBlazor
+IF EXISTS (SELECT * FROM sys.databases WHERE NAME = 'ManufacturerManager')
+	DROP DATABASE ManufacturerManager
 GO
 
-USE ManufacturerManagerWithMudBlazor
+CREATE DATABASE ManufacturerManager
+GO
+
+USE ManufacturerManager
 GO
 
 CREATE TABLE ManufacturerStatus (
@@ -82,7 +82,7 @@ GO
 
 CREATE TABLE Colour (
 	ColourId INT NOT NULL IDENTITY(1, 1),
-	Name NVARCHAR(20) NOT NULL,
+	Name NVARCHAR(25) NOT NULL,
 	CONSTRAINT PK_Colour PRIMARY KEY (ColourId)
 )
 GO
